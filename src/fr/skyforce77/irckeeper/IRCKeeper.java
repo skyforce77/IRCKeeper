@@ -1,5 +1,6 @@
 package fr.skyforce77.irckeeper;
 
+import fr.skyforce77.irckeeper.commands.CommandManager;
 import jerklib.ConnectionManager;
 import jerklib.Profile;
 import jerklib.Session;
@@ -54,8 +55,9 @@ public class IRCKeeper implements IRCEventListener{
 		}
 	}
 	
-	
 	public static void main(String[] args) {
 		new IRCKeeper("skyforce77-PI");
+		CommandManager.createCommands();
+		CommandManager.createTerminal();
 	}
 }
